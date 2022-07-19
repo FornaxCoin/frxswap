@@ -1,5 +1,7 @@
 import { toChecksumAddress } from 'web3-utils';
 import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list';
+// import {DEFAULT_LIST_OF_LISTS} from '../../constants/lists'
+// const DEFAULT_TOKEN_LIST = DEFAULT_LIST_OF_LISTS
 import { ChainId, Token } from '@uniswap/sdk';
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists';
 import { useMemo } from 'react';
@@ -108,6 +110,7 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
 // merge tokens contained within lists from urls
 function useCombinedTokenMapFromUrls(urls: string[] | undefined): TokenAddressMap {
   const lists = useAllLists();
+  // console.log('lists = > ', lists)
 
   return useMemo(() => {
     if (!urls) return EMPTY_LIST;
@@ -146,7 +149,10 @@ export function useInactiveListUrls(): string[] {
 // get all the tokens from active lists, combine with local default tokens
 export function useCombinedActiveList(): TokenAddressMap {
   const activeListUrls = useActiveListUrls();
+  // console.log('💻 activeListUrls:', activeListUrls)
   const activeTokens = useCombinedTokenMapFromUrls(activeListUrls);
+  // console.log('🪙 activeTokens', activeTokens)
+  // console.log('❌ DEFAULT_TOKEN_LIST', DEFAULT_TOKEN_LIST)
   const defaultTokenMap = listToTokenMap(DEFAULT_TOKEN_LIST);
   return combineMaps(activeTokens, defaultTokenMap);
 }

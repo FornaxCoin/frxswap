@@ -10,10 +10,10 @@ import {
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 export const FACTORY_ADDRESS = '0xa8f407b929b0Ad52dEa54cCa07ae5101ded0C4f1';
-export const ROUTER_ADDRESS = '0xB9cCB7C2E2Ddaf124e2941BD017e1361430C7D72';
+export const ROUTER_ADDRESS = '0xaE2c1537293e057f99d6Be40dF2271de7B186e45';
 
-export const LP_TOKEN_NAME = 'Swap-LP-Token';
-export const LP_TOKEN_SYMBOL = 'SWAP-LP';
+export const LP_TOKEN_NAME = 'FRXswap';
+export const LP_TOKEN_SYMBOL = 'FRX-LP';
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -27,6 +27,27 @@ export const DAI = new Token(
   'DAI',
   'Dai Stablecoin'
 );
+export const fDAI = new Token(
+    ChainId.RINKEBY,
+    '0xe97d7AdC25134dD6D347E3C04F6d1721b1c09938',
+    18,
+    'fDAI',
+    'Dai Stablecoin rinky'
+);
+export const fBAT = new Token(
+    ChainId.RINKEBY,
+    '0xD0B879e6b5BA644d638A7fe3101c4CaE726a17f2',
+    18,
+    'fBAT',
+    'BAT Stablecoin rinky'
+);
+// export const WETH = new Token(
+//     ChainId.RINKEBY,
+//     '0xc778417E063141139Fce010982780140Aa0cD5Ab',
+//     18,
+//     'WETH',
+//     'Wrapped Ether'
+// );
 export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C');
 export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD');
 export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound');
@@ -79,7 +100,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
   [ChainId.ROPSTEN]: [...WETH_ONLY[ChainId.ROPSTEN]],
-  [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY]],
+  [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY], fDAI, fBAT],
   [ChainId.GÖRLI]: [...WETH_ONLY[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [...WETH_ONLY[ChainId.KOVAN]],
 };

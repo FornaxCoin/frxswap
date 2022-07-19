@@ -149,7 +149,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.5.0;\n\ninterface IUniswapV1Exchange {\n    function balanceOf(address owner) external view returns (uint);\n    function transferFrom(address from, address to, uint value) external returns (bool);\n    function removeLiquidity(uint, uint, uint, uint) external returns (uint, uint);\n    function tokenToEthSwapInput(uint, uint, uint) external returns (uint);\n    function ethToTokenSwapInput(uint, uint) external payable returns (uint);\n}\n",
-  "sourcePath": "/Users/rakoon/Documents/Projects/frxswap/contracts/periphery/interfaces/V1/IUniswapV1Exchange.sol",
+  "sourcePath": "/Users/rakoon/Documents/Projects/fornax/frxswap/contracts/periphery/interfaces/V1/IUniswapV1Exchange.sol",
   "ast": {
     "absolutePath": "project:/contracts/periphery/interfaces/V1/IUniswapV1Exchange.sol",
     "exportedSymbols": {
@@ -1665,7 +1665,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-07-14T14:43:06.558Z",
+  "updatedAt": "2022-07-19T22:17:51.014Z",
   "devdoc": {
     "methods": {}
   },

@@ -28,7 +28,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.5.0;\n\ninterface IUniswapV1Factory {\n    function getExchange(address) external view returns (address);\n}\n",
-  "sourcePath": "/Users/rakoon/Documents/Projects/frxswap/contracts/periphery/interfaces/V1/IUniswapV1Factory.sol",
+  "sourcePath": "/Users/rakoon/Documents/Projects/fornax/frxswap/contracts/periphery/interfaces/V1/IUniswapV1Factory.sol",
   "ast": {
     "absolutePath": "project:/contracts/periphery/interfaces/V1/IUniswapV1Factory.sol",
     "exportedSymbols": {
@@ -314,7 +314,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-07-14T14:43:06.558Z",
+  "updatedAt": "2022-07-19T22:17:51.015Z",
   "devdoc": {
     "methods": {}
   },

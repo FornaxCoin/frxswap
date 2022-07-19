@@ -65,6 +65,7 @@ export default function Pool() {
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs();
+  // console.log('trackedTokenPairs', trackedTokenPairs)
   const tokenPairsWithLiquidityTokens = useMemo(
     () => trackedTokenPairs.map((tokens) => ({ liquidityToken: toV2LiquidityToken(tokens), tokens })),
     [trackedTokenPairs]
@@ -86,13 +87,16 @@ export default function Pool() {
       ),
     [tokenPairsWithLiquidityTokens, v2PairsBalances]
   );
-
+  // console.log('liquidityTokensWithBalances', liquidityTokensWithBalances, 'tokenPairsWithLiquidityTokens', tokenPairsWithLiquidityTokens)
   const v2Pairs = usePairs(liquidityTokensWithBalances.map(({ tokens }) => tokens));
   const v2IsLoading =
     fetchingV2PairBalances ||
     v2Pairs?.length < liquidityTokensWithBalances.length ||
     v2Pairs?.some((V2Pair) => !V2Pair);
+  // console.log('v2Pairs', v2Pairs);
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair));
+  // console.log('account', account)
+  // console.log('allV2PairsWithLiquidity', allV2PairsWithLiquidity)
 
   return (
     <AppBody>

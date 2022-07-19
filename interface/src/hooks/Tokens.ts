@@ -53,6 +53,7 @@ export function useDefaultTokens(): { [address: string]: Token } {
 
 export function useAllTokens(): { [address: string]: Token } {
   const allTokens = useCombinedActiveList();
+  // console.log('allTokens', allTokens)
   return useTokensFromMap(allTokens, true);
 }
 

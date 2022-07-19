@@ -1,0 +1,21 @@
+{
+  "name": "frxswap",
+  "version": "1.0.0",
+  "description": "This is a FRX Swap, Decentralized Exchanges (Dex) similar to uniswap. This project is created for Fornax blockchain",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "truffle compile",
+    "deploy": "truffle migrate --network rinkeby"
+  },
+  "author": "Qasim Raheem Khokhar",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.10",
+    "@uniswap/lib": "^4.0.1-alpha",
+    "@uniswap/v2-core": "^1.0.1"
+  }
+}

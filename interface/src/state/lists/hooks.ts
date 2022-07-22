@@ -49,6 +49,7 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
   [ChainId.MAINNET]: {},
+  [ChainId.FORNAX]: {},
 };
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -60,6 +61,8 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
   console.log('list.tokens', list.tokens)
   const map = list.tokens.reduce<TokenAddressMap>(
     (tokenMap, tokenInfo) => {
+      console.log('inside=>',tokenMap, 'tokenInfo = >',tokenInfo)
+
       const tags: TagInfo[] =
         tokenInfo.tags
           ?.map((tagId) => {
@@ -67,8 +70,14 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
             return { ...list.tags[tagId], id: tagId };
           })
           ?.filter((x): x is TagInfo => Boolean(x)) ?? [];
+      console.log('here')
       const token = new WrappedTokenInfo(tokenInfo, tags);
+      console.log('here2')
+      console.log('token.chainId',token.chainId)
+      console.log('token map', tokenMap[token.chainId])
+        console.log('tokenMap[token.chainId][token.address]', tokenMap[token.chainId][token.address])
       if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.');
+      console.log('here3')
       return {
         ...tokenMap,
         [token.chainId]: {
@@ -81,7 +90,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
       };
     },
     { ...EMPTY_LIST }
-  );
+);
   listCache?.set(list, map);
   return map;
 }
@@ -102,6 +111,7 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     1: { ...map1[1], ...map2[1] },
     3: { ...map1[3], ...map2[3] },
     4: { ...map1[4], ...map2[4] },
+    13937: { ...map1[13937], ...map2[13937] },
     5: { ...map1[5], ...map2[5] },
     42: { ...map1[42], ...map2[42] },
   };

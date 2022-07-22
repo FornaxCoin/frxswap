@@ -69,6 +69,7 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
   [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
+  [ChainId.FORNAX]: [WETH[ChainId.FORNAX]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
 };
@@ -101,6 +102,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
   [ChainId.ROPSTEN]: [...WETH_ONLY[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY], fDAI, fBAT],
+  [ChainId.FORNAX]: [...WETH_ONLY[ChainId.FORNAX], fDAI, fBAT],
   [ChainId.GÖRLI]: [...WETH_ONLY[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [...WETH_ONLY[ChainId.KOVAN]],
 };

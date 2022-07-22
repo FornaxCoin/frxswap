@@ -1,6 +1,6 @@
 import { providers, utils, Contract } from 'ethers';
 import CONTRACT from './UniswapV2Factory.json';
-export const CONTRACT_ADDRESS = '0x4445047c6c8535eae4BAa56D424EC0C23DB1145B';
+export const CONTRACT_ADDRESS = '0xa8f407b929b0Ad52dEa54cCa07ae5101ded0C4f1';
 // const provider = providers.getDefaultProvider('rinkeby');
 
 export const isMetaMaskInstalled = () => {

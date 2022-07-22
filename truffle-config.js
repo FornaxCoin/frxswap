@@ -69,15 +69,6 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true,    // Skip dry run before migrations? (default: false for public nets )        },
     },
-    fornax_test: {
-      provider: () => new HDWallet("6343d2e0502e5133cb74c528189598264456fdd079c72cbaa78d3605defc3801", `https://testnetv1.watchfornax.com/rpc`),
-      network_id: 13937, // Ropsten's id
-      chainId: 13937,
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true    // Skip dry run before migrations? (default: false for public nets )        },
-    },
     bsc: {
       provider: () =>
           new HDWallet(

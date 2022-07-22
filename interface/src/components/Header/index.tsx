@@ -241,7 +241,7 @@ export const StyledMenuButton = styled.button`
 `;
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
-  [ChainId.RINKEBY]: 'Rinkeby',
+  [ChainId.FORNAX]: 'Fornax',
   // [ChainId.ROPSTEN]: 'Ropsten',
   // [ChainId.GÖRLI]: 'Goerli',
   // [ChainId.KOVAN]: 'Kovan',

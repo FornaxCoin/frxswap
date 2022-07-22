@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CoolSwap-interface" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/interface" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/interface/forks/uniswap-sdk" vcs="Git" />
   </component>
 </project>

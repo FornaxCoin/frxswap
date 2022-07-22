@@ -129,7 +129,10 @@ function toCallState(
   fragment: FunctionFragment | undefined,
   latestBlockNumber: number | undefined
 ): CallState {
-  if (!callResult) return INVALID_CALL_STATE;
+  if (!callResult) return INVALID_CALL_STATE
+
+  console.log("callResult", callResult)
+
   const { valid, data, blockNumber } = callResult;
   if (!valid) return INVALID_CALL_STATE;
   if (valid && !blockNumber) return LOADING_CALL_STATE;
@@ -198,6 +201,7 @@ export function useMultipleContractSingleData(
   options?: ListenerOptions
 ): CallState[] {
   const fragment = useMemo(() => contractInterface.getFunction(methodName), [contractInterface, methodName]);
+
   const callData: string | undefined = useMemo(
     () =>
       fragment && isValidMethodArgs(callInputs)
@@ -205,7 +209,7 @@ export function useMultipleContractSingleData(
         : undefined,
     [callInputs, contractInterface, fragment]
   );
-
+  console.log(fragment,'fragment',callData)
   const calls = useMemo(
     () =>
       fragment && addresses && addresses.length > 0 && callData
@@ -220,7 +224,7 @@ export function useMultipleContractSingleData(
         : [],
     [addresses, callData, fragment]
   );
-
+  console.log('calls=>',methodName, calls)
   const results = useCallsData(calls, options);
 
   const latestBlockNumber = useBlockNumber();

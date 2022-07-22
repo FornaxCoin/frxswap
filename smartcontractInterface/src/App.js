@@ -1,7 +1,7 @@
 import './App.css'
 import React, { useEffect, useState } from 'react'
 import { connectToMetaMask, contractInterface } from './blockchain'
-import CONTRACT from './UniswapV2Factory.json'
+import CONTRACT from './UniswapV2Router02.json'
 import Form from './form'
 import IPFS from './components/ipfs/ipfs'
 function App() {

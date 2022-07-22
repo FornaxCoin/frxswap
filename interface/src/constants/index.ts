@@ -10,7 +10,7 @@ import {
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 export const FACTORY_ADDRESS = '0xa8f407b929b0Ad52dEa54cCa07ae5101ded0C4f1';
-export const ROUTER_ADDRESS = '0xaE2c1537293e057f99d6Be40dF2271de7B186e45';
+export const ROUTER_ADDRESS = '0x1DDdd59CBaF43e40f6E08c73795d7B81B838DAE2';
 
 export const LP_TOKEN_NAME = 'FRXswap';
 export const LP_TOKEN_SYMBOL = 'FRX-LP';
@@ -28,18 +28,25 @@ export const DAI = new Token(
   'Dai Stablecoin'
 );
 export const fDAI = new Token(
-    ChainId.RINKEBY,
+    ChainId.FORNAX,
     '0xe97d7AdC25134dD6D347E3C04F6d1721b1c09938',
     18,
     'fDAI',
-    'Dai Stablecoin rinky'
+    'Dai Stablecoin'
 );
 export const fBAT = new Token(
-    ChainId.RINKEBY,
+    ChainId.FORNAX,
     '0xD0B879e6b5BA644d638A7fe3101c4CaE726a17f2',
     18,
     'fBAT',
-    'BAT Stablecoin rinky'
+    'BAT Stablecoin'
+);
+export const fFAT = new Token(
+    ChainId.FORNAX,
+    '0x97AF8490c63675292eb6C1B80eAa25D3f421Ea43',
+    18,
+    'fBAT',
+    'BAT Stablecoin'
 );
 // export const WETH = new Token(
 //     ChainId.RINKEBY,
@@ -55,6 +62,8 @@ export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589
 export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth');
 export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC');
 
+export const WFRX = new Token(ChainId.FORNAX, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WFRX', 'Wrapped Fornax');
+
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
 export const AVERAGE_BLOCK_TIME_IN_SECS = 13;
 export const PROPOSAL_LENGTH_IN_BLOCKS = 40_320;
@@ -64,7 +73,7 @@ export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC';
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
   [TIMELOCK_ADDRESS]: 'Timelock',
 };
-
+console.log("WETH ====> ", WETH);
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
   [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
@@ -78,6 +87,7 @@ const WETH_ONLY: ChainTokenList = {
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR, WBTC],
+  [ChainId.FORNAX]: [ fDAI, fBAT],
 };
 
 /**
@@ -102,7 +112,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
   [ChainId.ROPSTEN]: [...WETH_ONLY[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [...WETH_ONLY[ChainId.RINKEBY], fDAI, fBAT],
-  [ChainId.FORNAX]: [...WETH_ONLY[ChainId.FORNAX], fDAI, fBAT],
+  [ChainId.FORNAX]: [...WETH_ONLY[ChainId.FORNAX], fDAI, fBAT, fFAT],
   [ChainId.GÖRLI]: [...WETH_ONLY[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [...WETH_ONLY[ChainId.KOVAN]],
 };

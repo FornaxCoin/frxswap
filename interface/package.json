@@ -93,6 +93,7 @@
   "dependencies": {
     "@uniswap/default-token-list": "2.0.0",
     "dotenv": "^10.0.0",
+    "tsdx": "^0.14.1",
     "web3-utils": "^1.5.3"
   },
   "eslintConfig": {
